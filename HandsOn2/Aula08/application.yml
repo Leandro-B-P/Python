@@ -1,0 +1,12 @@
+#application.yml
+name: Terminus_web_git
+repo: http://github.com/AlissonMMenezes/Terminus.git
+deploy-sequence:
+  - apt-get update
+  - apt-get install git -y
+  - apt-get install python python-setuptools python-dev -y
+  - apt-get install sqlite3 -y
+  - easy_install pyramid_mailer
+  - git clone http://github.com/AlissonMMenezes/Terminus.git /srv/
+  - bash -c 'cd /srv/ ; python setup.py install'
+  - bash -c 'cd /srv/ ; nohup pserve development.ini --reload & 2>&1 > /dev/null'

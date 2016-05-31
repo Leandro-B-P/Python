@@ -1,0 +1,19 @@
+#application.yml
+name: Terminus_web
+developers:
+  - leandrobatistapereira@gmail.com
+  - leandro.pereira2@inova.net
+webhook: http://192.168.201.127:8080/gitlab/build_now
+deploy-sequence:
+  - docker exec -ti Terminus_web apt-get update
+  - docker exec -ti Terminus_web apt-get install git -y
+  - docker exec -ti Terminus_web apt-get install apache2 php5 -y
+  - docker exec -ti Terminus_web service apache2 restart
+#  - apt-get update
+#  - apt-get install git -y
+#  - apt-get install python python-setuptools python-dev -y
+#  - apt-get install sqlite3 -y
+#  - easy_install pyramid_mailer
+#  - git clone http://github.com/AlissonMMenezes/Terminus.git /srv/
+#  - bash -c 'cd /srv/ ; python setup.py install'
+#  - bash -c 'cd /srv/ ; nohup pserve development.ini --reload & 2>&1 > /dev/null'
