@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Author: Leandro Batista
+# E-mail: leandrobatistapereira98@gmail.com
+
 import requests
 
 
