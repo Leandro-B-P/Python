@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
+# Author: Leandro Batista
+# E-mail: leandrobatistapereira98@gmail.com
+
 import requests
 
 
