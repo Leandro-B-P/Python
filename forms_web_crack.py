@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Author: Leandro Batista
+# E-mail: leandrobatistapereira98@gmail.com
+
 from colorama import Fore, init
 import requests
 import sys
