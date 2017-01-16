@@ -16,11 +16,16 @@ def conect_ldap():
     # CONEXAO COM OS LDAP'S
     try:
         for s in servidor:
+            # CONECTANDO-SE AO LDAP
             conn = ldap.initialize('ldap://%s:389' % s)
+            # PASSANDO O USER E SENHA
             conn.simple_bind_s('uid=admin,cn=test,cn=br', 'senha')
+            # TIMEOUT DE 10 SEGUNDOS
             conn.set_option(ldap.OPT_TIMEOUT, 10)
+            # BUSCA NA BASE PELO E-MAIL
             conn.search_s('dc=teste,dc=domain,dc=com,dc=br',
                           ldap.SCOPE_SUBTREE, '(mail=*)', ['cn', 'mail'])
+            # SE TUDO ESTA OK AGUARDA 1s E PRINTA NA TELA
             time.sleep(1)
             print('%s %s Conexao Realizada com Sucesso!') % (time.ctime(), s)
             # CONVERTENDO NOME EM IP
