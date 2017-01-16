@@ -9,7 +9,7 @@ import time
 import ldap
 import iptc
 
-servidor = ['192.168.6.74']
+servidor = ['servidor1.teste.com.br', 'servidor2.teste.com.br', 'servidor3.teste.com.br']
 
 
 def conect_ldap():
