@@ -2,14 +2,14 @@
 # -*- coding: latin-1 -*-
 # author: Leandro Pereira
 # contato: leandrobatistapereira98@gmail.com
+#############################################
 import socket
 import sys
 import time
 import ldap
 import iptc
 
-servidor = ['servidor1.com.br',
-            'servidor2.com.br', 'servidor3.com.br']
+servidor = ['192.168.6.74']
 
 
 def conect_ldap():
@@ -19,11 +19,11 @@ def conect_ldap():
             # CONECTANDO-SE AO LDAP
             conn = ldap.initialize('ldap://%s:389' % s)
             # PASSANDO O USER E SENHA
-            conn.simple_bind_s('uid=admin,cn=test,cn=br', 'senha')
+            conn.simple_bind_s('uid=zimbra,cn=admins,cn=zimbra', 'nLUQMRCt8')
             # TIMEOUT DE 10 SEGUNDOS
             conn.set_option(ldap.OPT_TIMEOUT, 10)
             # BUSCA NA BASE PELO E-MAIL
-            conn.search_s('dc=teste,dc=domain,dc=com,dc=br',
+            conn.search_s('dc=lab03,dc=u,dc=inova,dc=com,dc=br',
                           ldap.SCOPE_SUBTREE, '(mail=*)', ['cn', 'mail'])
             # SE TUDO ESTA OK AGUARDA 1s E PRINTA NA TELA
             time.sleep(1)
@@ -56,11 +56,15 @@ def rules_iptables(ip):
         time.sleep(1)
         # ESPERANDO 2 SEGUNDOS
         print("Regras Aplicadas... %s") % time.ctime()
-        time.sleep(300)
+	time.sleep(5)
+	flush_rules()
+        time.sleep(10)
         conect_ldap()
-    except ldap.OPT_SUCCESS:
-        flush_rules()
-
+    except (ldap.SERVER_DOWN, ldap.TIMEOUT) as i:
+	if i:
+	    rules_iptables(s)
+	else:
+	    pass
 
 def flush_rules():
     # DANDO UM FLUSH NA REGRA DE BLOQUEIO
@@ -71,3 +75,4 @@ def flush_rules():
 
 
 conect_ldap()
+
