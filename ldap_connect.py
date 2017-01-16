@@ -19,11 +19,11 @@ def conect_ldap():
             # CONECTANDO-SE AO LDAP
             conn = ldap.initialize('ldap://%s:389' % s)
             # PASSANDO O USER E SENHA
-            conn.simple_bind_s('uid=zimbra,cn=admins,cn=zimbra', 'nLUQMRCt8')
+            conn.simple_bind_s('uid=zimbra,cn=admins,cn=zimbra', 'senha')
             # TIMEOUT DE 10 SEGUNDOS
             conn.set_option(ldap.OPT_TIMEOUT, 10)
             # BUSCA NA BASE PELO E-MAIL
-            conn.search_s('dc=lab03,dc=u,dc=inova,dc=com,dc=br',
+            conn.search_s('dc=lab03,dc=u,dc=teste,dc=com,dc=br',
                           ldap.SCOPE_SUBTREE, '(mail=*)', ['cn', 'mail'])
             # SE TUDO ESTA OK AGUARDA 1s E PRINTA NA TELA
             time.sleep(1)
