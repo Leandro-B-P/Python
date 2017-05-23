@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-usuario = "leandro.pereira"
+usuario = "seu nome"
 password = "1234"
 
 print "\t1 - Para cadastrar usuarioss \n \
