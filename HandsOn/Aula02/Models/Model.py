@@ -24,6 +24,6 @@ class Grupos(db.Document):
 if __name__=='__main__':
     u = Usuarios()
     u.nome = "Leandro Batista"
-    u.email = "leandro.pereira@inova.net"
+    u.email = "leandro.pereira"
     u.save()
 
