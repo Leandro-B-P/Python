@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 _-*-
+# -*- coding: utf-8 -*-
 # author: Leandro Batista
 # e-mail: leandrobatistapereira98@gmail.com
 
