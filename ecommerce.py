@@ -1,7 +1,8 @@
 #!/usr/bin/python
-# -*- encoding: utf-8 -*-
-# Author: leandrobatistapereira98@gmail.com
-#
+# -*- coding: utf-8 _-*-
+# author: Leandro Batista
+# e-mail: leandrobatistapereira98@gmail.com
+
 carrinho = []
 
 produto1 = {'nome': 'Tenis', 'valor': 21.70}
