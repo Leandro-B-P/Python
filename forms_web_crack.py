@@ -1,6 +1,7 @@
-#!/usr/bin/env python
-# Author: Leandro Batista
-# E-mail: leandrobatistapereira98@gmail.com
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# author: Leandro Batista
+# e-mail: leandrobatistapereira98@gmail.com
 
 from colorama import Fore, init
 import requests
