@@ -1,7 +1,7 @@
-#!/usr/bin/env python
-# encoding: utf-8
-# Author: Leandro Batista
-# E-mail: leandrobatistapereira98@gmail.com
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# author: Leandro Batista
+# e-mail: leandrobatistapereira98@gmail.com
 
 import requests
 
