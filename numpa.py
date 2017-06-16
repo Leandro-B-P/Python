@@ -1,5 +1,7 @@
-# -*- coding: utf-8 -*-
-#!/usr/bin/python
+#!/usr/bin/python3
+# -*- coding: utf-8 _-*-
+# author: Leandro Batista
+# e-mail: leandrobatistapereira98@gmail.com
 # Estrutura da atribuição condicional
 
 num1 = int(input('Digite um numero: '))
